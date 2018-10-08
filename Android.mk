@@ -31,4 +31,7 @@ BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
     $(LOCAL_PATH)/private
+
+include device/custom/sepolicy/qcom/sepolicy.mk
+
 endif
