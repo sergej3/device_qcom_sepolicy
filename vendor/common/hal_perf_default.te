@@ -95,3 +95,5 @@ allow hal_perf {
     sysfs_scsi_host
     sysfs_kgsl
 }:lnk_file r_file_perms;
+
+dontaudit hal_perf_default self:capability { dac_override dac_read_search };
