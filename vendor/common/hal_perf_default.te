@@ -70,6 +70,7 @@ allow hal_perf {
     sysfs_msm_power
     sysfs_battery_supply
     sysfs_process_reclaim
+    sysfs_qfprom
 }:dir r_dir_perms;
 
 allow hal_perf {
@@ -87,6 +88,7 @@ allow hal_perf {
     sysfs_msm_power
     sysfs_battery_supply
     sysfs_process_reclaim
+    sysfs_qfprom
 }:file rw_file_perms;
 
 allow hal_perf {
@@ -97,3 +99,6 @@ allow hal_perf {
 }:lnk_file r_file_perms;
 
 dontaudit hal_perf_default self:capability { dac_override dac_read_search };
+
+# Allow to self kill capability
+allow hal_perf_default self:capability { kill };
